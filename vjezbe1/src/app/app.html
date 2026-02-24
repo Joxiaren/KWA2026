@@ -1,0 +1,32 @@
+<ul>
+  <li>{{student.ime}}</li>
+  <li>{{student.prezime}}</li>
+  <li>{{student["brojIndeksa"]}}</li>
+</ul>
+
+<table>
+  <thead>
+    <th>Broj Indeksa</th>
+    <th>Ime</th>
+    <th>Prezime</th>
+    <th>Smer</th>
+    <th>Godina Upisa</th>
+    <th>Prosecna Ocena</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{student.brojIndeksa}}</td>
+      <td>{{student.ime}}</td>
+      <td>{{student.prezime}}</td>
+      <td>{{student.smer}}</td>
+      <td>{{student.godinaUpisa}}</td>
+      <td>
+        @if(student.prosecnaOcena < 6){ - }
+        @else {
+          {{student.prosecnaOcena}}
+        }
+      </td>
+    </tr>
+  </tbody>
+</table>
+  
