@@ -1,0 +1,43 @@
+<form (submit)=dodajStudenta()>
+  <div>
+    <label for="brojIndeksa">Broj indeksa:</label>
+    <input type="text" [(ngModel)]="noviStudent.brojIndeksa" name="brojIndeksa"/>
+  </div>
+  <div>
+    <label for="ime">Ime:</label>
+    <input type="text" [(ngModel)]="noviStudent.ime" name="ime"/>
+  </div>
+  <div>
+    <label for="prezime">Prezime:</label>
+    <input type="text" [(ngModel)]="noviStudent.prezime" name="prezime"/>
+  </div>
+  <div>
+    <label for="smer">Smer:</label>
+    <select [compareWith]="compare" name="smer" [(ngModel)]="noviStudent.smer" >
+      @for(smer of smerovi; track $index){
+        <option [ngValue]="smer">{{smer.naziv}}</option>
+      }
+    </select>
+    <!-- <input type="text" [(ngModel)]="noviStudent.smer" name="smer"/> -->
+  </div>
+  <div>
+    <label for="godinaUpisa">Godina upisa:</label>
+    <input type="number" [(ngModel)]="noviStudent.godinaUpisa" name="godinaUpisa"/>
+  </div>
+  <div>
+    <label for="prosecnaOcena">Prosecna ocena:</label>
+    <input type="number" [(ngModel)]="noviStudent.prosecnaOcena" name="prosecnaOcena"/>
+  </div>
+  <div>
+    @if(indexZaIzmenu != null){
+      <button>
+        Izmeni Studenta
+      </button>
+    }
+    @else{
+      <button>
+        Dodaj Studenta
+      </button>
+    }
+  </div>
+</form> 
