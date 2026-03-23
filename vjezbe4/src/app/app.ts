@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { Forma } from 'app/forma/forma';
 import { ReaktivnaForma } from 'app/reaktivna-forma/reaktivna-forma';
+import { StudentService } from 'app/student-service';
 import { Tabela } from 'app/tabela/tabela';
 
 @Component({
@@ -16,9 +17,7 @@ export class App {
   niz: string[] = [];
   indexZaIzmenu: number | null = null;
 
-
-  studentService: StudentSer
-
+  studentService: StudentService = inject(StudentService);
   smerovi = [
     {
       naziv: "Softversko nesto",
@@ -35,7 +34,7 @@ export class App {
     brojIndeksa: "129",
     godinaUpisa: 2025,
     smer: this.smerovi[1],
-    prosecnaOcena: 8.7
+    prosecnaOcena: 2.7
   },
   {
     ime:"Gojko",
@@ -57,18 +56,11 @@ export class App {
   
   studentZaIzmenu: any = {};
 
-  // student : Student = {
-  //   ime:"Marko",
-  //   prezime:"Makrkovic",
-  //   brojIndeksa: "129",
-  //   godinaUpisa: 2025,
-  //   smer: "SIIT",
-  //   prosecnaOcena: 8.7
-  // };
-
-  //student2: Student = new Student("Jovan", "Jovanovic", "12312", "PR", 2012, 2.2);
-
-
+  constructor(){
+    this.studentService.getAll().subscribe(data => {
+      console.log(data);
+    })
+  }
   metoda() {
     this.title = 123;
     this.niz.push("123");
@@ -77,7 +69,10 @@ export class App {
   }
 
   dodajStudenta(student: any){
-    this.studenti.push({...student});
+    //this.studenti.push({...student});
+    this.studentService.create(student).subscribe(r => {
+      this.studentService.getAll().subscribe(data => { this.studenti = data;})
+    })
   }
 
   izmeniStudenta(student: any){
@@ -102,5 +97,9 @@ export class App {
   }
   obrisiStudenta(index: number){
     this.studenti.splice(index, 1);
+
+    this.studentService.delete(index).subscribe(r => {
+      this.studentService.getAll().subscribe(data => { this.studenti = data;})
+    })
   }
 }

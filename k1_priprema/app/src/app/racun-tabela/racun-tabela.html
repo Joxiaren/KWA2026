@@ -1,0 +1,21 @@
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Broj Racuna</th>
+        <th>Stanje</th>
+        <th>Akcije</th>
+    </thead>
+    <tbody>
+        @for(racun of racuni(); track racun.id){
+            <tr [style.backgroundColor]="isNegative($index) ? 'red' : ''">
+                <td>{{racun.id}}</td>
+                <td>{{racun.brojRacuna}}</td>
+                <td>{{racun.stanje}}</td>
+                <td>
+                    <button (click)="deleteEvent($index)">Izbrisi</button>
+                    <button (click)="editEvent($index)">Izmeni</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

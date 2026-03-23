@@ -1,0 +1,5 @@
+
+<app-forma [indexZaIzmenu]="indexZaIzmenu" [noviStudent]="studentZaIzmenu" (dodaj)="dodajStudenta($event)" (izmeni)="izmeniStudenta($event)"> </app-forma>
+<app-reaktivna-forma></app-reaktivna-forma>
+
+<app-tabela (obrisi)="obrisiStudenta($event)" (izmeni)="postaviZaIzmenu($event)" [studenti]="studenti"></app-tabela>

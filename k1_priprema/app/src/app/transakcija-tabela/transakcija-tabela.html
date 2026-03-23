@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Tip</th>
+        <th>Iznos</th>
+        <th>Datum Transakcije</th>
+        <th>Klijent ID</th>
+        <th>Racun ID</th>
+        <th>Akcije</th>
+    </thead>
+    <tbody>
+        @for(transakcija of transakcijeShow(); track transakcija.id){
+            <tr>
+                <td>{{transakcija.id}}</td>
+                <td>{{transakcija.tip}}</td>
+                <td>{{transakcija.iznos}}</td>
+                <td>{{transakcija.datumTransakcije}}</td>
+                <td>{{transakcija.klijentId}}</td>
+                <td>{{transakcija.racunId}}</td>
+                <td>
+                    <button (click)="deleteEvent($index)">Izbrisi</button>
+                    <button (click)="editEvent($index)">Izmeni</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

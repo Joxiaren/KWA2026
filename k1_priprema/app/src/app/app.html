@@ -1,0 +1,16 @@
+<div id="app">
+    <div class="tab">
+        <app-klijent-form [receive]="klijentEdit()" (addEmit)="addKlijent($event)" (editEmit)="editKlijent($event)"></app-klijent-form>
+        <app-klijent-tabela [klijenti]="klijenti" (deleteEmit)="deleteKlijent($event)" (editEmit)="setEditKlijent($event)"></app-klijent-tabela>
+    </div>
+    
+    <div class="tab">
+        <app-racun-form [receive]="racunEdit()" (addEmit)="addRacun($event)" (editEmit)="editRacun($event)"></app-racun-form>
+        <app-racun-tabela [racuni]="racuni" (deleteEmit)="deleteRacun($event)" (editEmit)="setEditRacun($event)"></app-racun-tabela>
+    </div>
+    
+    <div class="tab">
+        <app-transakcija-form [receive]="transakcijaEdit()" [klijenti]="klijenti()" [racuni]="racuni()" (addEmit)="addTransakcija($event)" (editEmit)="editTransakcija($event)"></app-transakcija-form>
+        <app-transakcija-tabela [transakcije]="transakcije" (deleteEmit)="deleteTransakcija($event)" (editEmit)="setEditTransakcija($event)"></app-transakcija-tabela>
+    </div>
+</div>

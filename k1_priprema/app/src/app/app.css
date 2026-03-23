@@ -1,0 +1,23 @@
+
+#app{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 12px;
+}
+.tab:nth-child(1){
+    box-shadow: 4px 4px 12px blue;
+}
+.tab:nth-child(2){
+    box-shadow: 4px 4px 12px green;
+}
+.tab:nth-child(3){
+    box-shadow: 4px 4px 12px red;
+}
+.tab{
+    padding: 24px;
+    margin: 12px;
+    background-color: #d0fff3;
+    border-radius: 12px;
+
+
+}

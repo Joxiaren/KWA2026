@@ -16,12 +16,14 @@
         <td>{{student.prezime}}</td>
         <td>{{student.smer.akronim}}</td>
         <td>{{student.godinaUpisa}}</td>
-        <td>
-          @if(student.prosecnaOcena < 6){ - }
-          @else {
-            {{student.prosecnaOcena}}
-          }
-        </td>
+        <ng-template [appObelezavanjeOcene] = "student.prosecnaOcena" [porukaTemplate]="poruka">
+            <td>
+                @if(student.prosecnaOcena < 6){ - }
+                @else {
+                    {{student.prosecnaOcena}}
+                }
+            </td>
+        </ng-template>
         <td>
           <button (click)="obrisiStudenta($index)">Ukloni</button>
           <button (click)="postaviZaIzmenu($index)">Izmeni</button>
@@ -30,3 +32,7 @@
     }
   </tbody>
 </table>
+ 
+<ng-template #poruka>
+    <td>Nije Polozio</td>
+</ng-template>
