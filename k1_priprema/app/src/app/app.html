@@ -1,16 +1,19 @@
 <div id="app">
     <div class="tab">
-        <app-klijent-form [receive]="klijentEdit()" (addEmit)="addKlijent($event)" (editEmit)="editKlijent($event)"></app-klijent-form>
-        <app-klijent-tabela [klijenti]="klijenti" (deleteEmit)="deleteKlijent($event)" (editEmit)="setEditKlijent($event)"></app-klijent-tabela>
+        <h2> Klijenti </h2>
+        <app-klijent-form [editItem]="klijentControl.itemEdit()" (addEmit)="klijentControl.addItem($event)" (editEmit)="klijentControl.editItem($event)"></app-klijent-form>
+        <app-klijent-tabela [items]="klijentControl.items" (deleteEmit)="klijentControl.deleteItem($event)" (editEmit)="klijentControl.setEditItem($event)"></app-klijent-tabela>
     </div>
     
     <div class="tab">
-        <app-racun-form [receive]="racunEdit()" (addEmit)="addRacun($event)" (editEmit)="editRacun($event)"></app-racun-form>
-        <app-racun-tabela [racuni]="racuni" (deleteEmit)="deleteRacun($event)" (editEmit)="setEditRacun($event)"></app-racun-tabela>
+        <h2> Racuni </h2>
+        <app-racun-form [editItem]="racunControl.itemEdit()" (addEmit)="racunControl.addItem($event)" (editEmit)="racunControl.editItem($event)"></app-racun-form>
+        <app-racun-tabela [items]="racunControl.items" (deleteEmit)="racunControl.deleteItem($event)" (editEmit)="racunControl.setEditItem($event)"></app-racun-tabela>
     </div>
     
     <div class="tab">
-        <app-transakcija-form [receive]="transakcijaEdit()" [klijenti]="klijenti()" [racuni]="racuni()" (addEmit)="addTransakcija($event)" (editEmit)="editTransakcija($event)"></app-transakcija-form>
-        <app-transakcija-tabela [transakcije]="transakcije" (deleteEmit)="deleteTransakcija($event)" (editEmit)="setEditTransakcija($event)"></app-transakcija-tabela>
+        <h2> Transakcije </h2>
+        <app-transakcija-form [editItem]="transakcijaControl.itemEdit()" [klijenti]="klijentControl.items()" [racuni]="racunControl.items()" (addEmit)="transakcijaControl.addItem($event)" (editEmit)="transakcijaControl.editItem($event)"></app-transakcija-form>
+        <app-transakcija-tabela [items]="transakcijaControl.items" (deleteEmit)="transakcijaControl.deleteItem($event)" (editEmit)="transakcijaControl.setEditItem($event)"></app-transakcija-tabela>
     </div>
 </div>

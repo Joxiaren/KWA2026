@@ -1,16 +1,12 @@
 <table>
     <thead>
-        <th>ID</th>
-        <th>Ime</th>
-        <th>Prezime</th>
-        <th>Akcije</th>
+        <th></th>
+        <th></th>
     </thead>
     <tbody>
-        @for(klijent of itemsShow(); track klijent.id){
+        @for(item of itemsShow(); track item){
             <tr>
-                <td>{{klijent.id}}</td>
-                <td>{{klijent.ime}}</td>
-                <td>{{klijent.prezime}}</td>
+                <td></td>
                 <td>
                     <button (click)="deleteEvent($index)">Izbrisi</button>
                     <button (click)="editEvent($index)">Izmeni</button>

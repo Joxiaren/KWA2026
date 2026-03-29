@@ -1,51 +1,21 @@
-import { Component, computed, EventEmitter, Input, Output, Signal, signal } from '@angular/core';
-import { TransakcijaForm } from 'app/transakcija-form/transakcija-form';
+import { Component, computed, Signal} from '@angular/core';
+import { GenericTable } from 'app/generic-table/generic-table';
+import { SortableHeader } from 'app/directives/sortable-header';
 
 @Component({
   selector: 'app-transakcija-tabela',
-  imports: [],
+  imports: [SortableHeader],
   templateUrl: './transakcija-tabela.html',
   styleUrl: './transakcija-tabela.css',
 })
-export class TransakcijaTabela {
-  @Input()
-  transakcije = signal<Transakcija[]>([]);
+export class TransakcijaTabela extends GenericTable<Transakcija>{
 
-  transakcijeShow : Signal<Transakcija[]> = computed(() => this.transakcije().sort(
-    (a,b) => {
-      for(let i = 0; i < this.sortingFn.length; i++){
-        if(this.sortingFn[i](a,b) != 0) return this.sortingFn[i](a,b);
-      }
-      return 0;
-  }));
-
-  sortingFn : ((a: Transakcija, b: Transakcija) => number)[] = [this.iznosCompareGen(false), this.datumCompareGen(true)];
-
-  iznosCompareGen(desc : boolean){
-    return (a: Transakcija, b: Transakcija) => {
-      return (a.iznos < b.iznos ? 1 : (a.iznos > b.iznos ? -1 : 0)) * (desc ? -1 : 1);
-    }
-  }
-
-  datumCompareGen(desc : boolean){
-    return (a: Transakcija, b: Transakcija) => {
-      let dateA = new Date(a.datumTransakcije);
-      let dateB = new Date(b.datumTransakcije);
-
-      return (dateA.getTime() < dateB.getTime() ? 1 : (dateA.getTime() > dateB.getTime() ? -1 : 0)) * (desc ? -1 : 1);
-    }
-  }
-
-  @Output()
-  deleteEmit = new EventEmitter<number>();
-
-  @Output()
-  editEmit = new EventEmitter<number>();
-
-  editEvent(index: number){
-    this.editEmit.emit(index);
-  }
-  deleteEvent(index: number){
-    this.deleteEmit.emit(index);
-  }
+  iznosDirection : Signal<boolean | null> = computed(
+    () => this.findSortDirection("iznos")
+    
+  );
+  datumDirection : Signal<boolean | null> = computed(
+    () => this.findSortDirection("datumTransakcije")
+  );
 }
+

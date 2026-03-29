@@ -4,3 +4,8 @@ td,th {
 table{
     border-collapse: collapse;
 } 
+
+td input{
+    display: inline;
+    max-width: 100px;
+}

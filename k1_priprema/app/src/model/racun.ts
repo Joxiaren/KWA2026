@@ -1,5 +1,4 @@
-interface Racun{
-    id: number,
+interface Racun extends GenericModel<number>{
     brojRacuna: string,
     stanje: number
 }

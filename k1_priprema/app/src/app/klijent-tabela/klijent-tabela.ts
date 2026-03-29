@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { GenericTable } from 'app/generic-table/generic-table';
 
 @Component({
   selector: 'app-klijent-tabela',
@@ -6,20 +7,5 @@ import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
   templateUrl: './klijent-tabela.html',
   styleUrl: './klijent-tabela.css',
 })
-export class KlijentTabela {
-  @Input()
-  klijenti = signal<Klijent[]>([]);
-
-  @Output()
-  deleteEmit = new EventEmitter<number>();
-
-  @Output()
-  editEmit = new EventEmitter<number>();
-
-  editEvent(index: number){
-    this.editEmit.emit(index);
-  }
-  deleteEvent(index: number){
-    this.deleteEmit.emit(index);
-  }
+export class KlijentTabela extends GenericTable<Klijent>{
 }

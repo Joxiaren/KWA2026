@@ -2,19 +2,19 @@
     <thead>
         <th>ID</th>
         <th>Tip</th>
-        <th>Iznos</th>
-        <th>Datum Transakcije</th>
+        <th *appSortableHeader="let arrow; from: iznosDirection()" class="sortable" (click)="toggleSort('iznos')">Iznos {{arrow}}</th>
+        <th *appSortableHeader="let arrow; from: datumDirection()" class="sortable" (click)="toggleSort('datumTransakcije')">Datum Transakcije {{arrow}}</th>
         <th>Klijent ID</th>
         <th>Racun ID</th>
         <th>Akcije</th>
     </thead>
     <tbody>
-        @for(transakcija of transakcijeShow(); track transakcija.id){
+        @for(transakcija of itemsShow(); track transakcija.id){
             <tr>
                 <td>{{transakcija.id}}</td>
                 <td>{{transakcija.tip}}</td>
                 <td>{{transakcija.iznos}}</td>
-                <td>{{transakcija.datumTransakcije}}</td>
+                <td>{{transakcija.datumTransakcije.getFullYear()}}/{{transakcija.datumTransakcije.getMonth() + 1}}/{{transakcija.datumTransakcije.getDate()}}</td>
                 <td>{{transakcija.klijentId}}</td>
                 <td>{{transakcija.racunId}}</td>
                 <td>
