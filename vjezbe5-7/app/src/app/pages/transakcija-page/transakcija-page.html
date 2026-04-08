@@ -1,0 +1,5 @@
+<div class="tab">
+    <h2> Transakcije </h2>
+    <app-transakcija-form [editItem]="transakcijaControl.itemEdit()" [klijenti]="klijentControl.items()" [racuni]="racunControl.items()" (addEmit)="transakcijaControl.addItem($event)" (editEmit)="transakcijaControl.editItem($event)"></app-transakcija-form>
+    <app-transakcija-tabela [items]="transakcijaControl.items" (deleteEmit)="transakcijaControl.deleteItem($event)" (editEmit)="transakcijaControl.setEditItem($event)"></app-transakcija-tabela>
+</div> 

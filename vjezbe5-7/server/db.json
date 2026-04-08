@@ -1,0 +1,168 @@
+{
+  "permissions": {},
+  "klijenti": [
+    {
+      "ime": "dada",
+      "prezime": "asdas",
+      "id": 4
+    },
+    {
+      "id": 8,
+      "ime": "ssome",
+      "prezime": "sajoidja"
+    },
+    {
+      "ime": "dada",
+      "prezime": "asdassad",
+      "id": 10
+    },
+    {
+      "id": 12,
+      "ime": "asdadadwd",
+      "prezime": "aasdas"
+    },
+    {
+      "id": 15,
+      "ime": "ad",
+      "prezime": "daa213"
+    }
+  ],
+  "transakcije": [
+    {
+      "id": 2,
+      "tip": "idk",
+      "iznos": 5600.5,
+      "datumTransakcije": "2022-01-19",
+      "klijentId": 2,
+      "racunId": 1
+    },
+    {
+      "id": 3,
+      "tip": "adada",
+      "iznos": 21131,
+      "datumTransakcije": "2026-02-24",
+      "klijentId": 2,
+      "racunId": 3
+    },
+    {
+      "id": 4,
+      "tip": "111",
+      "iznos": 1312312,
+      "datumTransakcije": "2026-03-24",
+      "klijentId": 8,
+      "racunId": 3
+    },
+    {
+      "id": 5,
+      "tip": "uplata",
+      "iznos": 10002,
+      "datumTransakcije": "2026-03-25",
+      "klijentId": 8,
+      "racunId": 1
+    },
+    {
+      "id": 6,
+      "tip": "123",
+      "iznos": 3333,
+      "datumTransakcije": "2026-03-31",
+      "klijentId": 4,
+      "racunId": 3
+    },
+    {
+      "id": 7,
+      "tip": "213",
+      "iznos": 3333,
+      "datumTransakcije": "2026-03-31",
+      "klijentId": 8,
+      "racunId": 2
+    },
+    {
+      "id": 8,
+      "tip": "isplata",
+      "iznos": -5000,
+      "datumTransakcije": "2026-03-28",
+      "klijentId": 10,
+      "racunId": 1
+    },
+    {
+      "id": 9,
+      "tip": "something",
+      "iznos": 3333,
+      "datumTransakcije": "2026-04-01",
+      "klijentId": 4,
+      "racunId": 1
+    },
+    {
+      "id": 10,
+      "tip": "something",
+      "iznos": 3333,
+      "datumTransakcije": "2026-04-08",
+      "klijentId": 4,
+      "racunId": 1
+    },
+    {
+      "id": 11,
+      "tip": "something",
+      "iznos": 3333,
+      "datumTransakcije": "2026-04-17",
+      "klijentId": 4,
+      "racunId": 1
+    },
+    {
+      "id": 14,
+      "tip": "something",
+      "iznos": 10002,
+      "datumTransakcije": "2026-05-05",
+      "klijentId": 4,
+      "racunId": 1
+    },
+    {
+      "id": 19,
+      "tip": "Poklon",
+      "iznos": 10000,
+      "datumTransakcije": "2026-04-01",
+      "klijentId": 13,
+      "racunId": 6
+    },
+    {
+      "id": 20,
+      "tip": "Ovaj cemo da provjerimo(provjereno)",
+      "iznos": -2005,
+      "datumTransakcije": "2026-04-04",
+      "klijentId": 4,
+      "racunId": 1
+    }
+  ],
+  "racuni": [
+    {
+      "id": 1,
+      "brojRacuna": "12340004321",
+      "stanje": 33561
+    },
+    {
+      "id": 2,
+      "brojRacuna": "55220001122",
+      "stanje": 57311.2
+    },
+    {
+      "id": 3,
+      "brojRacuna": "e21312312",
+      "stanje": -1454
+    },
+    {
+      "id": 4,
+      "brojRacuna": "123123",
+      "stanje": -1234
+    },
+    {
+      "id": 5,
+      "brojRacuna": "123123",
+      "stanje": 21321
+    },
+    {
+      "id": 6,
+      "brojRacuna": "1123",
+      "stanje": 1300022
+    }
+  ]
+}

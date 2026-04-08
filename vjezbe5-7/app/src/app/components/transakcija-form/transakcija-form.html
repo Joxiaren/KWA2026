@@ -1,0 +1,43 @@
+<form [formGroup]="form" (submit)="addEvent()">
+    <div>
+        <label for="tip"> Tip:</label>
+        <input type="text" formControlName="tip" name="tip"/>
+    </div>
+    <div>
+        <label for="iznos"> Iznos:</label>
+        <input type="number" formControlName="iznos" name="iznos"/>
+    </div>
+    <div>
+        <label for="datumTransakcije"> Datum Transakcije:</label>
+        <input type="date" formControlName="datumTransakcije" name="datumTransakcije"/>
+        @if(datumWarning()){
+            <div style="color: red;"> Datum transakcije ne moze biti pre danas</div>
+        }
+    </div>
+    <div>
+        <label for="klijentId"> Klijent: </label>
+        <select name="klijentId" formControlName="klijentId">
+            @for(klijent of klijenti; track $index){
+                <option [ngValue]="klijent.id">{{klijent.ime}} {{klijent.prezime}}</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="racunId"> Racun:</label>
+        <select name="racunId" formControlName="racunId">
+            @for(racun of racuni; track $index){
+                <option [ngValue]="racun.id">{{racun.brojRacuna}}</option>
+            }
+        </select>
+    </div>
+        <div>
+        <button>
+            @if (mode() === "add"){
+                Dodaj 
+            }
+            @else{
+                Izmeni
+            }
+        </button>
+    </div>
+</form>

@@ -1,0 +1,6 @@
+
+<div class="tab">
+    <h2> Klijenti </h2>
+    <app-klijent-form [editItem]="klijentControl.itemEdit()" (addEmit)="klijentControl.addItem($event)" (editEmit)="klijentControl.editItem($event)"></app-klijent-form>
+    <app-klijent-tabela [items]="klijentControl.items" (deleteEmit)="klijentControl.deleteItem($event)" (editEmit)="klijentControl.setEditItem($event)"></app-klijent-tabela>
+</div>
