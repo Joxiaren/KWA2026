@@ -1,0 +1,21 @@
+<form [formGroup]="form" (submit)="addEvent()">
+    <div>
+        <label for="naziv"> Naziv:</label>
+        <input type="text" formControlName="naziv" name="naziv"/>
+    </div>
+    <app-adresa-form [adresaInput]="adresaString()" (adresaEmit)="updateAdress($event)"></app-adresa-form>
+    <div>
+        <label for="kapacitet"> Kapacitet:</label>
+        <input type="number" formControlName="kapacitet" name="kapacitet"/>
+    </div>
+        <div>
+        <button>
+            @if (mode() === "add"){
+                Dodaj 
+            }
+            @else{
+                Izmeni
+            }
+        </button>
+    </div>
+</form>

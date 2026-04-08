@@ -1,0 +1,30 @@
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Naziv</th>
+        <th>Adresa</th>
+        <th>Kapacitet</th>
+        <th>Kapacitet bar</th>
+        <th>Akcije</th>
+    </thead>
+    <tbody>
+        @for(magacin of magacini(); track magacin.id){
+            <tr>
+                <td>{{magacin.id}}</td>
+                <td>{{magacin.naziv}}</td>
+                <td>{{magacin.adresa}}</td>
+                <td>{{magacin.kapacitet}}</td>
+                <td><progress 
+                    [ngClass]="progressClass(magacin)"
+                    max={{magacin.kapacitet}} 
+                    value={{getCapacity(magacin)}}>
+                </progress>
+                </td>
+                <td>
+                    <button (click)="deleteEvent($index)">Izbrisi</button>
+                    <button (click)="editEvent($index)">Izmeni</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

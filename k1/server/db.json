@@ -1,0 +1,136 @@
+{
+  "permissions": {},
+  "magacin": [
+    {
+      "id": 1,
+      "naziv": "ABC Magacin",
+      "adresa": "Marka Miljanova 3522, Novi Sad",
+      "kapacitet": 820
+    },
+    {
+      "id": 2,
+      "naziv": "Dostavni centar s",
+      "adresa": "Kralja Petra 61, Beograd",
+      "kapacitet": 160.5
+    },
+    {
+      "id": 3,
+      "naziv": "Merkator magacin",
+      "adresa": "Bulevar oslobođenja 12a, Novi Sad",
+      "kapacitet": 452.3
+    },
+    {
+      "id": 4,
+      "naziv": "365 Magacin",
+      "adresa": "Bajči Žilinskog bb, Novi Sad",
+      "kapacitet": 551.2
+    },
+    {
+      "id": 5,
+      "naziv": "Dostavni centar Delhaize",
+      "adresa": "Sremskih partizana 17, Surčin",
+      "kapacitet": 430
+    },
+    {
+      "id": 6,
+      "naziv": "Novi magacin",
+      "adresa": "Mihajla Pupina 33, Novi Sad",
+      "kapacitet": 1000
+    },
+    {
+      "id": 7,
+      "naziv": "test",
+      "adresa": "null,null",
+      "kapacitet": 123
+    },
+    {
+      "id": 8,
+      "naziv": "Let us test this31",
+      "adresa": "Kralja Petra 61, Beograd",
+      "kapacitet": 123
+    },
+    {
+      "id": 9,
+      "naziv": "Hello",
+      "adresa": "Beograd,Neko Mestodasd",
+      "kapacitet": 1000
+    },
+    {
+      "id": 10,
+      "naziv": "Test",
+      "adresa": "Ovo 22ulica,Ovo 33 uc",
+      "kapacitet": 12312
+    },
+    {
+      "id": 11,
+      "naziv": "naziv",
+      "adresa": "Ulica,Mesto",
+      "kapacitet": 111
+    }
+  ],
+  "roba": [
+    {
+      "id": 1,
+      "naziv": "Brašno T500",
+      "opis": "Belo brašno, T500",
+      "cena": 121.75,
+      "kolicina": 2222,
+      "jedinica": "Kg",
+      "magacin_id": 1
+    },
+    {
+      "id": 2,
+      "magacin_id": 1,
+      "naziv": "Jabuka",
+      "opis": "Domaća jabuka, ajdaret",
+      "cena": 75.34,
+      "kolicina": 55.7,
+      "jedinica": "Kg"
+    },
+    {
+      "id": 3,
+      "naziv": "Keks Domaćica",
+      "opis": "Domaćica classic keks",
+      "cena": 143.69,
+      "kolicina": 162,
+      "jedinica": "Kom",
+      "magacin_id": 2
+    },
+    {
+      "id": 4,
+      "naziv": "Banane",
+      "opis": "Novi opis",
+      "cena": 175.24,
+      "kolicina": 217.92,
+      "jedinica": "Kg",
+      "magacin_id": 5
+    },
+    {
+      "id": 7,
+      "naziv": "test",
+      "opis": "123123",
+      "cena": 112,
+      "kolicina": 288,
+      "jedinica": "kg",
+      "magacin_id": 6
+    },
+    {
+      "id": 8,
+      "naziv": "some roba",
+      "opis": "11",
+      "cena": 80,
+      "kolicina": 80,
+      "jedinica": "kg",
+      "magacin_id": 7
+    },
+    {
+      "id": 9,
+      "naziv": "roba22",
+      "opis": "nesto",
+      "cena": 123,
+      "kolicina": 2,
+      "jedinica": "g",
+      "magacin_id": 11
+    }
+  ]
+}

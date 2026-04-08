@@ -1,0 +1,40 @@
+<form [formGroup]="form" (submit)="addEvent()">
+    <div>
+        <label for="naziv"> Naziv: </label>
+        <input type="text" formControlName="naziv" name="naziv"/>
+    </div>
+    <div>
+        <label for="opis"> Opis: </label>
+        <input type="text" formControlName="opis" name="opis"/>
+    </div>
+    <div>
+        <label for="cena"> Cena: </label>
+        <input type="number" formControlName="cena" name="cena"/>
+    </div>
+    <div>
+        <label for="kolicina"> Kolicina: </label>
+        <input type="number" formControlName="kolicina" name="kolicina"/>
+    </div>
+    <div>
+        <label for="jedinica"> Jedinica: </label>
+        <input type="text" formControlName="jedinica" name="jedinica"/>
+    </div>
+    <div>
+        <label for="magacin_id"> Magacin: </label>
+        <select name="magacin_id" formControlName="magacin_id">
+            @for(magacin of magacini; track $index){
+                <option [ngValue]="magacin.id">{{magacin.naziv}}</option>
+            }
+        </select>
+    </div>
+    <div>
+        <button>
+            @if (mode() === "add"){
+                Dodaj 
+            }
+            @else{
+                Izmeni
+            }
+        </button>
+    </div>
+</form>

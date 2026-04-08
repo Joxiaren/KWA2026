@@ -1,0 +1,22 @@
+td,th {
+    border: 2px solid red;
+}
+table{
+    border-collapse: collapse;
+} 
+progress{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+}
+
+.low::-webkit-progress-value, .low::-moz-progress-bar{
+    background-color: green;
+}
+.mid::-webkit-progress-value, .mid::-moz-progress-bar{
+    background-color: yellow;
+}
+.high::-webkit-progress-value, .high::-moz-progress-bar{
+    background-color: red;
+}

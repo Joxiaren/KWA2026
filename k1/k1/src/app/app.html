@@ -1,0 +1,12 @@
+<div id="app">
+  <div class="tab">
+    <h1>Roba</h1>
+    <app-roba-form [receive]="robaEdit()"  [magacini]="magacini()" (addEmit)="addRoba($event)" (editEmit)="editRoba($event)"></app-roba-form>
+    <app-roba-table [robas]="robas" (deleteEmit)="deleteRoba($event)" (editEmit)="setEditRoba($event)"></app-roba-table>
+  </div>
+  <div class="tab">
+    <h1>Magacin</h1>
+    <app-magacin-form [receive]="magacinEdit()" (addEmit)="addMagacin($event)" (editEmit)="editMagacin($event)"></app-magacin-form>
+    <app-magacin-table [magacini]="magacini" [robas]="robas()" (deleteEmit)="deleteMagacin($event)" (editEmit)="setEditMagacin($event)"></app-magacin-table>
+  </div>
+</div>

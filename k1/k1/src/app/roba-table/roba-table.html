@@ -1,0 +1,29 @@
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Naziv</th>
+        <th>Opis</th>
+        <th>Cena</th>
+        <th>Kolicina</th>
+        <th>Jedinica</th>
+        <th>Magacin ID</th>
+        <th>Akcije</th>
+    </thead>
+    <tbody>
+        @for(roba of robas(); track roba.id){
+            <tr>
+                <td>{{roba.id}}</td>
+                <td>{{roba.naziv}}</td>
+                <td>{{roba.opis}}</td>
+                <td>{{roba.cena}}</td>
+                <td>{{roba.kolicina}}</td>
+                <td>{{roba.jedinica}}</td>
+                <td>{{roba.magacin_id}}</td>
+                <td>
+                    <button (click)="deleteEvent($index)">Izbrisi</button>
+                    <button (click)="editEvent($index)">Izmeni</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
