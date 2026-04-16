@@ -1,0 +1,5 @@
+<div class="tab">
+    <h2> Racuni </h2>
+    <app-racun-form [editItem]="racunControl.itemEdit()" (addEmit)="racunControl.addItem($event)" (editEmit)="racunControl.editItem($event)"></app-racun-form>
+    <app-racun-tabela [items]="racunControl.items" (deleteEmit)="racunControl.deleteItem($event)" (editEmit)="racunControl.setEditItem($event)"></app-racun-tabela>
+</div>

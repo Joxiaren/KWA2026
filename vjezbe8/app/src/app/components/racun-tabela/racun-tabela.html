@@ -1,0 +1,32 @@
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Broj Racuna</th>
+        <th>Stanje</th>
+        <th>Akcije</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input (input)="setIdFilter($event.target.value)" type="number"/></td>
+            <td><input (input)="setBrojRacuna($event.target.value)" type="text"/></td>
+            <td>
+                od:
+                <input (input)="setStanjeOd($event.target.value)" type="number"/>
+                do:
+                <input (input)="setStanjeDo($event.target.value)" type="number"/>
+            </td>
+            <td></td>
+        </tr>
+        @for(racun of itemsShow(); track racun.id){
+            <tr [style.backgroundColor]="isNegative($index) ? 'red' : ''">
+                <td>{{racun.id}}</td>
+                <td>{{racun.brojRacuna}}</td>
+                <td>{{racun.stanje}}</td>
+                <td>
+                    <button (click)="deleteEvent($index)">Izbrisi</button>
+                    <button (click)="editEvent($index)">Izmeni</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Akcije</th>
+    </thead>
+    <tbody>
+        @for(klijent of itemsShow(); track klijent.id){
+            <tr>
+                <td>{{klijent.id}}</td>
+                <td>{{klijent.ime}}</td>
+                <td>{{klijent.prezime}}</td>
+                <td>
+                    <button (click)="deleteEvent($index)">Izbrisi</button>
+                    <button (click)="editEvent($index)">Izmeni</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

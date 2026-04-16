@@ -1,0 +1,12 @@
+<a [routerLink]="['']">Main</a>
+<a [routerLink]="['klijenti']">Klijenti</a>
+<a [routerLink]="['transakcije']">Transakcije</a>
+<a [routerLink]="['racuni']">Racuni</a>
+
+@if(loginService.token() === ""){
+    <a [routerLink]="['login']">Login</a>
+}
+@else{
+    <app-logout></app-logout>
+}   
+

@@ -1,0 +1,20 @@
+<form [formGroup]="form" (submit)="addEvent()">
+    <div>
+        <label for="brojRacuna"> Broj Racuna: </label>
+        <input type="text" formControlName="brojRacuna" name="brojRacuna"/>
+    </div>
+    <div>
+        <label for="stanje"> Stanje: </label>
+        <input type="number" formControlName="stanje" name="stanje"/>
+    </div>
+    <div>
+        <button>
+            @if (mode() === "add"){
+                Dodaj 
+            }
+            @else{
+                Izmeni
+            }
+        </button>
+    </div>
+</form>
