@@ -14,9 +14,8 @@
     "importHelpers": true,
     "target": "esnext",
     "module": "preserve",
-    "baseUrl": "src",
     "paths": {
-      "@/*": ["src/*"]
+      "*": ["./src/*"]
     }
   },
   "angularCompilerOptions": {
