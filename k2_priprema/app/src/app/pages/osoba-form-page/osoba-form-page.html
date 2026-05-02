@@ -1,0 +1,9 @@
+<div>
+    <button (click)="cancel()">Cancel</button>
+    <app-osoba-form
+      [editItem]="osobaControl.itemEdit()"
+      (addEmit)="osobaControl.addItem($event)"
+      (editEmit)="osobaControl.editItem($event)"
+      (submitEmit)="submitEvent($event)"
+    ></app-osoba-form>
+</div>

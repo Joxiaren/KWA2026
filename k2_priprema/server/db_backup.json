@@ -1,0 +1,91 @@
+{
+  "permissions": {
+    "/osobe": ["ROLE_ADMIN"],
+    "/rezervacije": ["ROLE_ADMIN", "ROLE_USER"]
+  },
+  "users": [
+    {
+      "id":1,
+      "username": "korisnik",
+      "password": "korisnik",
+      "roles": ["ROLE_USER"]
+    },
+    {
+      "id":2,
+      "username": "korisnik2",
+      "password": "korisnik2",
+      "roles": ["ROLE_USER", "ROLE_ADMIN"]
+    },
+    {
+      "id":3,
+      "username": "admin",
+      "password": "admin",
+      "roles": ["ROLE_ADMIN"]
+    }
+  ],
+  "osobe": [
+    {
+      "id": 1,
+      "ime": "Marina",
+      "prezime": "Lukić"
+    },
+    {
+      "id": 2,
+      "ime": "Petar",
+      "prezime": "Jovanović"
+    },
+    {
+      "id": 3,
+      "ime": "Ivana",
+      "prezime": "Savić"
+    },
+    {
+      "id": 4,
+      "ime": "Teodora",
+      "prezime": "Marković"
+    },
+    {
+      "id": 5,
+      "ime": "Đorđe",
+      "prezime": "Nikolić"
+    }
+  ],
+  "rezervacije": [
+    {
+      "id": 1,
+      "idOsobe": 1,
+      "brojSobe": "A001",
+      "opis": "Jednokrevetna soba",
+      "cena": 150,
+      "pocetakRezervacije": "2022-01-03",
+      "krajRezervacije": "2022-01-07"
+    },
+    {
+      "id": 2,
+      "idOsobe": 5,
+      "brojSobe": "A002",
+      "opis": "Jednokrevetna soba",
+      "cena": 120,
+      "pocetakRezervacije": "2022-11-03",
+      "krajRezervacije": "2022-11-07"
+    },
+    {
+      "id": 3,
+      "idOsobe": 3,
+      "brojSobe": "A011",
+      "opis": "Prostrana dvokrevetna soba",
+      "cena": 200,
+      "pocetakRezervacije": "2022-02-05",
+      "krajRezervacije": "2022-02-08"
+    },
+    {
+      "id": 4,
+      "idOsobe": 1,
+      "brojSobe": "A031",
+      "opis": "Trokrevetna soba",
+      "cena": 250,
+      "pocetakRezervacije": "2022-10-13",
+      "krajRezervacije": "2022-10-27"
+    }
+  ]
+}

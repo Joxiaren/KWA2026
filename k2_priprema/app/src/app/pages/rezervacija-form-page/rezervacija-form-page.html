@@ -1,0 +1,10 @@
+<div>
+    <button (click)="cancel()">Cancel</button>
+    <app-rezervacija-form
+      [editItem]="rezervacijaControl.itemEdit()"
+      [osobe]="rezervacijaControl.osobaItems"
+      (addEmit)="rezervacijaControl.addItem($event)"
+      (editEmit)="rezervacijaControl.editItem($event)"
+      (submitEmit)="submitEvent($event)"
+    ></app-rezervacija-form>
+</div>

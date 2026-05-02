@@ -1,0 +1,36 @@
+<table>
+    <thead>
+      <th>ID</th>
+      <th>Broj Sobe</th>
+      <th>Opis</th>
+      <th>Cena</th>
+      <th>Pocetak Rezervacije</th>
+      <th>Kraj Rezervacije</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      @for (item of itemsShow(); track item.id) {
+        <tr (click)="detailView(item.id)">
+          <td>{{ item.id }}</td>
+          <td>{{ item.brojSobe }}</td>
+          <td>{{ item.opis }}</td>
+          <td>{{ item.cena }}</td>
+          <td>
+            @if(item.pocetakRezervacije != null){
+              {{ item.pocetakRezervacije.getFullYear() }}/{{ item.pocetakRezervacije.getMonth() + 1 }}/{{ item.pocetakRezervacije.getDate() }}
+            }
+          </td>
+          <td>
+            @if(item.krajRezervacije != null){
+              {{ item.krajRezervacije.getFullYear() }}/{{ item.krajRezervacije.getMonth() + 1 }}/{{ item.krajRezervacije.getDate() }}
+            }
+          </td>
+          <td>
+            <button appClickStopPropagation (click)="deleteEvent($index)">Izbrisi</button>
+            <button appClickStopPropagation (click)="editEvent($index)">Izmeni</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  

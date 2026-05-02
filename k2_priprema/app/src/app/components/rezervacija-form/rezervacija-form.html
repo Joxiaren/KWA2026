@@ -1,0 +1,39 @@
+<form [formGroup]="form" (submit)="addEvent()">
+    <div>
+        <label for="osobaId"> Osoba: </label>
+        <select [compareWith]="compare" name="idOsobe" formControlName="idOsobe">
+            @for(osoba of osobe(); track $index){
+                <option [ngValue]="osoba.id">{{osoba.ime}} {{osoba.prezime}}</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="brojSobe"> Broj Sobe: </label>
+        <input type="text" formControlName="brojSobe" name="brojSobe" />
+    </div>
+    <div>
+        <label for="opis"> Opis: </label>
+        <input type="text" formControlName="opis" name="opis" />
+    </div>
+    <div>
+        <label for="cena"> Cena</label>
+        <input type="number" formControlName="cena" name="cena" />
+    </div>
+    <div>
+        <label for="pocetakRezervacije"> Pocetak Rezervacije: </label>
+        <input type="date" formControlName="pocetakRezervacije" name="pocetakRezervacije" />
+    </div>
+    <div>
+        <label for="krajRezervacije"> Kraj Rezervacije: </label>
+        <input type="date" formControlName="krajRezervacije" name="krajRezervacije" />
+    </div>
+    <div>
+        <button>
+            @if (mode() === "add") {
+            Dodaj
+            } @else {
+            Izmeni
+            }
+        </button>
+    </div>
+</form>

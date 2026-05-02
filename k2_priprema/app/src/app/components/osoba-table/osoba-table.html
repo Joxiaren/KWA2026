@@ -1,0 +1,22 @@
+<table>
+    <thead>
+      <th>ID</th>
+      <th>Ime</th>
+      <th>Prezime</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      @for (item of itemsShow(); track item.id) {
+        <tr (click)="detailView(item.id)">
+          <td>{{ item.id }}</td>
+          <td>{{ item.ime }}</td>
+          <td>{{ item.prezime }}</td>
+          <td>
+            <button appClickStopPropagation (click)="deleteEvent($index)">Izbrisi</button>
+            <button appClickStopPropagation (click)="editEvent($index)">Izmeni</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  

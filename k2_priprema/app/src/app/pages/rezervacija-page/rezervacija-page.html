@@ -1,0 +1,10 @@
+<div>
+    <h2>Rezervacije</h2>
+    <app-rezervacija-table
+      [items]="rezervacijaControl.items"
+      (deleteEmit)="rezervacijaControl.deleteItem($event)"
+      (editEmit)="rezervacijaControl.setEditItem($event)"
+    ></app-rezervacija-table>
+    <button (click)="add()">Dodaj Rezervaciju</button>
+</div>
+  

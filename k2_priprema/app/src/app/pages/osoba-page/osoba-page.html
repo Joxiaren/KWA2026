@@ -1,0 +1,10 @@
+<div>
+    <h2>Osobe</h2>
+    <app-osoba-table
+      [items]="osobaControl.items"
+      (deleteEmit)="osobaControl.deleteItem($event)"
+      (editEmit)="osobaControl.setEditItem($event)"
+    ></app-osoba-table>
+    <button (click)="add()">Dodaj Osobu</button>
+  </div>
+  
