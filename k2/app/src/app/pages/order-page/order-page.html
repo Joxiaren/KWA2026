@@ -1,0 +1,8 @@
+<div>
+    <h2>Orders</h2>
+    <app-order-table
+      [items]="orderControl.items"
+      (deleteEmit)="orderControl.deleteItem($event)"
+      (editEmit)="orderControl.setEditItem($event)"
+    ></app-order-table>
+</div>

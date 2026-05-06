@@ -1,0 +1,32 @@
+<div>
+    @if(itemShow != null){
+        <div class="detail-row">
+            <div class="detail-title">ID: </div>
+            <div class="detail-value">{{itemShow.id}}</div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-title">User Id: </div>
+            <div class="detail-value">{{itemShow.userId}}</div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-title">Naziv: </div>
+            <div class="detail-value">{{itemShow.naziv}}</div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-title">Status: </div>
+            <div class="detail-value">
+                <app-status [status]="itemShow.status"></app-status>
+            </div>
+            @if(itemShow.status < 3){
+                <button (click)="nextStatusEvent()">Sledeci status</button>
+            }
+        </div>
+                <div class="detail-row">
+            <div class="detail-title">Prioritet:</div>
+            <div class="detail-value">{{itemShow.prioritet}}</div>
+        </div>
+    }
+    @else{
+        <div>None</div>
+    }
+</div>

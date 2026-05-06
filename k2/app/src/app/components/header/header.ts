@@ -1,0 +1,24 @@
+import { Component, computed, inject, Signal } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { LoginService } from 'app/services/login-service';
+
+@Component({
+  selector: 'app-header',
+  imports: [RouterLink],
+  templateUrl: './header.html',
+  styleUrl: './header.css',
+})
+export class Header {
+  router = inject(Router);
+  loginService = inject(LoginService);
+
+  username: Signal<string> = computed(() =>{
+    if(this.loginService.payload() == null) return null; 
+    return this.loginService.payload()['username'];
+  });
+
+  logout(){
+    this.loginService.logout();
+    this.router.navigate(['login']);
+  }
+}

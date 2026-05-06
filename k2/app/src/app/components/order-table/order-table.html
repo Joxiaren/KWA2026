@@ -1,0 +1,18 @@
+<table>
+    <thead>
+      <th>ID</th>
+      <th>Naziv</th>
+      <th>Status</th>
+      <th *appSortableHeader="let arrow; from: prioritetDirection()" class="sortable" (click)="toggleSort('prioritet')">Prioritet {{arrow}}</th>
+    </thead>
+    <tbody>
+      @for (item of itemsShow(); track item.id) {
+        <tr (click)="detailView(item.id)">
+          <td>{{ item.id }}</td>
+          <td>{{ item.naziv }}</td>
+          <td><app-status [status]="item.status"></app-status> </td>
+          <td>{{ item.prioritet }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>

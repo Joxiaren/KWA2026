@@ -1,7 +1,7 @@
 SET PATH=%PATH:C:\Program Files\nodejs\;=%;C:\Users\student\Documents\TESTING\node-v24.14.0-win-x64
 
 
-ng generate c 
-ng generate d
-ng generate s
+ng g c 
+ng g d
+ng g s
 

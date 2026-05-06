@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "/orders": [
+      "ROLE_ADMIN"
+    ]
+  },
+  "users": [
+    {
+      "id": 1,
+      "username": "user",
+      "password": "user",
+      "roles": [
+        "ROLE_USER",
+        "ROLE_ADMIN"
+      ]
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "user2",
+      "roles": [
+        "ROLE_USER"
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "naziv": "porudzbina1",
+      "status": 3,
+      "prioritet": 5
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "naziv": "porudzbina4",
+      "status": 2,
+      "prioritet": 7
+    },
+    {
+      "id": 5,
+      "userId": 2,
+      "naziv": "porudzbina5",
+      "status": 3,
+      "prioritet": 2
+    }
+  ]
+}

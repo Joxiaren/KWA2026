@@ -1,0 +1,10 @@
+.detail-row{
+    display: flex;
+}
+.detail-title{
+    font-weight: bold;
+    margin-right: 12px;
+}
+.detail-value{
+    margin-right: 12px;
+}

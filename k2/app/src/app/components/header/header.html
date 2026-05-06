@@ -1,0 +1,12 @@
+<a [routerLink]="['']">Main</a>
+<a [routerLink]="['orders']">Orders</a>
+
+@if(username() != null){
+    <button (click)="logout()">Logout</button>
+    <span>
+        Welcome: {{username()}}
+    </span>
+}
+@else{
+<a [routerLink]="['login']">Login</a>
+}

@@ -1,0 +1,15 @@
+.sortable:hover{
+    cursor: pointer;
+}
+
+tr:hover{
+    cursor: pointer;
+    background-color: rgb(158, 167, 218);
+}
+
+td,th {
+    border: 1px solid black;
+}
+table{
+    border-collapse: collapse;
+} 
